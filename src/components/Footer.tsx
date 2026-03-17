@@ -34,7 +34,8 @@ export default function Footer() {
           <h4 className="text-sm font-medium text-foreground mb-3">Support</h4>
           <div className="flex flex-col gap-2">
             <Link to="/contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Contact Us</Link>
-            <a href="https://wa.me/1234567890" target="_blank" rel="noreferrer" className="text-sm text-primary hover:underline">WhatsApp</a>
+            <a href="https://wa.me/2348128629010" target="_blank" rel="noreferrer" className="text-sm text-primary hover:underline">WhatsApp</a>
+            <a href="mailto:thegadgetconnect1207@gmail.com" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Email Us</a>
           </div>
         </div>
       </div>

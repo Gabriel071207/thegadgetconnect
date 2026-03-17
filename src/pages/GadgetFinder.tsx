@@ -2,10 +2,11 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Sparkles } from "lucide-react";
 import { products, categories } from "@/data/products";
+import { formatNaira } from "@/lib/currency";
 import ProductCard from "@/components/ProductCard";
 
 export default function GadgetFinder() {
-  const [budget, setBudget] = useState(2000);
+  const [budget, setBudget] = useState(3000000);
   const [category, setCategory] = useState("All");
   const [brand, setBrand] = useState("All");
 
@@ -32,13 +33,13 @@ export default function GadgetFinder() {
         <div className="bg-card rounded-xl p-6 card-shadow mb-8 grid md:grid-cols-3 gap-6">
           <div>
             <label className="text-sm font-medium text-foreground block mb-2">
-              Budget: <span className="font-mono text-primary">${budget.toLocaleString()}</span>
+              Budget: <span className="font-mono text-primary">{formatNaira(budget)}</span>
             </label>
             <input
               type="range"
-              min={100}
-              max={3000}
-              step={50}
+              min={100000}
+              max={5000000}
+              step={50000}
               value={budget}
               onChange={e => setBudget(Number(e.target.value))}
               className="w-full accent-primary"

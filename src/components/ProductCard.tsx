@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Star, Zap } from "lucide-react";
 import type { Product } from "@/data/products";
 import { productImages } from "@/data/productImages";
+import { formatNaira } from "@/lib/currency";
 
 interface Props {
   product: Product;
@@ -49,10 +50,10 @@ export default function ProductCard({ product, index = 0 }: Props) {
             <p className="text-xs text-muted-foreground mb-1">{product.brand}</p>
             <h3 className="text-sm font-medium text-foreground truncate">{product.name}</h3>
             <div className="flex items-center gap-2 mt-1">
-              <span className="text-primary font-mono text-lg">${product.price.toLocaleString()}</span>
+              <span className="text-primary font-mono text-lg">{formatNaira(product.price)}</span>
               {product.originalPrice && (
                 <span className="text-muted-foreground font-mono text-sm line-through">
-                  ${product.originalPrice.toLocaleString()}
+                  {formatNaira(product.originalPrice)}
                 </span>
               )}
             </div>
