@@ -21,7 +21,7 @@ export default function Contact() {
         <div className="grid md:grid-cols-2 gap-8">
           <div className="space-y-4">
             <a
-              href="https://wa.me/1234567890"
+              href="https://wa.me/2348128629010"
               target="_blank"
               rel="noreferrer"
               className="flex items-center gap-3 bg-card rounded-xl p-4 card-shadow hover:-translate-y-0.5 transition-all nexus-ease"
@@ -31,7 +31,7 @@ export default function Contact() {
               </div>
               <div>
                 <p className="text-sm font-medium text-foreground">WhatsApp</p>
-                <p className="text-xs text-muted-foreground">Chat with us directly</p>
+                <p className="text-xs text-muted-foreground">+234 812 862 9010</p>
               </div>
             </a>
             <div className="flex items-center gap-3 bg-card rounded-xl p-4 card-shadow">
@@ -40,7 +40,7 @@ export default function Contact() {
               </div>
               <div>
                 <p className="text-sm font-medium text-foreground">Email</p>
-                <p className="text-xs text-muted-foreground">support@thegadgetconnect.com</p>
+                <p className="text-xs text-muted-foreground">thegadgetconnect1207@gmail.com</p>
               </div>
             </div>
             <div className="flex items-center gap-3 bg-card rounded-xl p-4 card-shadow">

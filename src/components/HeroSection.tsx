@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Zap } from "lucide-react";
-import iphoneImg from "@/assets/products/iphone-15-pro-max.png";
+import heroImg from "@/assets/products/hero-devices.png";
 
 export default function HeroSection() {
   return (
@@ -52,9 +52,9 @@ export default function HeroSection() {
             <div className="relative">
               <div className="absolute inset-0 bg-primary/10 rounded-full blur-[80px]" />
               <img
-                src={iphoneImg}
-                alt="Featured gadget"
-                className="relative w-72 md:w-96 mix-blend-lighten"
+                src={heroImg}
+                alt="Premium gadgets collection - phones, laptops, earbuds, tablets and more"
+                className="relative w-80 md:w-[28rem]"
               />
             </div>
           </motion.div>

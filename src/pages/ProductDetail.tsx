@@ -5,6 +5,7 @@ import { Star, ShoppingCart, MessageCircle, Bell, ChevronLeft } from "lucide-rea
 import { getProductById } from "@/data/products";
 import { productImages } from "@/data/productImages";
 import { useCart } from "@/context/CartContext";
+import { formatNaira } from "@/lib/currency";
 import { toast } from "sonner";
 
 export default function ProductDetail() {
@@ -36,9 +37,9 @@ export default function ProductDetail() {
   };
 
   const whatsappText = encodeURIComponent(
-    `Hello, I want to order this gadget:\n\nProduct: ${product.name}\nStorage: ${storage}\nColor: ${color}\nPrice: $${product.price.toLocaleString()}`
+    `Hello, I want to order this gadget:\n\nProduct: ${product.name}\nStorage: ${storage}\nColor: ${color}\nPrice: ${formatNaira(product.price)}`
   );
-  const whatsappUrl = `https://wa.me/1234567890?text=${whatsappText}`;
+  const whatsappUrl = `https://wa.me/2348128629010?text=${whatsappText}`;
 
   return (
     <div className="min-h-screen pt-20">
@@ -73,10 +74,10 @@ export default function ProductDetail() {
             </div>
 
             <div className="flex items-baseline gap-3 mb-6">
-              <span className="text-3xl font-mono text-primary">${product.price.toLocaleString()}</span>
+              <span className="text-3xl font-mono text-primary">{formatNaira(product.price)}</span>
               {product.originalPrice && (
                 <span className="text-lg font-mono text-muted-foreground line-through">
-                  ${product.originalPrice.toLocaleString()}
+                  {formatNaira(product.originalPrice)}
                 </span>
               )}
             </div>

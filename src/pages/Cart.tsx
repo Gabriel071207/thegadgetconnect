@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Minus, Plus, X, ShoppingCart } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 import { productImages } from "@/data/productImages";
+import { formatNaira } from "@/lib/currency";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Cart() {
@@ -41,7 +42,7 @@ export default function Cart() {
                   <p className="text-xs text-muted-foreground">
                     {item.selectedStorage && `${item.selectedStorage} · `}{item.selectedColor}
                   </p>
-                  <p className="text-primary font-mono mt-1">${item.product.price.toLocaleString()}</p>
+                  <p className="text-primary font-mono mt-1">{formatNaira(item.product.price)}</p>
                 </div>
                 <div className="flex items-center gap-2">
                   <button onClick={() => updateQuantity(item.product.id, item.quantity - 1)} className="w-8 h-8 rounded-md bg-secondary flex items-center justify-center text-muted-foreground hover:text-foreground">
@@ -63,7 +64,7 @@ export default function Cart() {
         <div className="bg-card rounded-xl p-6 card-shadow mt-6">
           <div className="flex justify-between items-center mb-4">
             <span className="text-muted-foreground">Subtotal</span>
-            <span className="text-2xl font-mono text-primary">${subtotal.toLocaleString()}</span>
+            <span className="text-2xl font-mono text-primary">{formatNaira(subtotal)}</span>
           </div>
           <div className="flex gap-3">
             <Link
