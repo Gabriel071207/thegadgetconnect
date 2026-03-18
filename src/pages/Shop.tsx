@@ -70,6 +70,21 @@ export default function Shop() {
             </button>
           ))}
         </div>
+        <div className="flex flex-wrap gap-2 mb-4">
+          {["All", "UK Used", "Brand New"].map(c => (
+            <button
+              key={c}
+              onClick={() => setCondition(c)}
+              className={`px-3 py-1.5 rounded-md text-xs font-medium transition-all nexus-ease ${
+                condition === c
+                  ? "bg-deal/10 text-deal"
+                  : "bg-secondary text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              {c}
+            </button>
+          ))}
+        </div>
         <div className="flex flex-wrap gap-2 mb-8">
           {brands.map(b => (
             <button
