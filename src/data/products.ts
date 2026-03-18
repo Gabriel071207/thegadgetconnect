@@ -20,37 +20,41 @@ export interface Product {
   condition?: "UK Used" | "Brand New";
 }
 
-// Helper to create products quickly
+const DISCOUNT = 30000;
+
 function phone(id: string, name: string, price: number, specs: Record<string, string>, opts: Partial<Product> = {}): Product {
   return {
-    id, name, brand: "Apple", category: "Smartphones", price,
+    id, name, brand: "Apple", category: "Smartphones", price: price - DISCOUNT,
+    originalPrice: price,
     image: "/placeholder.svg", images: ["/placeholder.svg"],
     storage: [], colors: [{ name: "Black", hex: "#1A1A1A" }],
     specs, description: `${name} — premium smartphone.`,
     rating: 4.7, reviews: Math.floor(Math.random() * 500 + 100),
-    inStock: true, condition: "UK Used", ...opts,
+    inStock: true, condition: "UK Used", isDeal: true, ...opts,
   };
 }
 
 function mac(id: string, name: string, price: number, specs: Record<string, string>, opts: Partial<Product> = {}): Product {
   return {
-    id, name, brand: "Apple", category: "Laptops", price,
+    id, name, brand: "Apple", category: "Laptops", price: price - DISCOUNT,
+    originalPrice: price,
     image: "/placeholder.svg", images: ["/placeholder.svg"],
     storage: [], colors: [{ name: "Space Gray", hex: "#4A4A4A" }, { name: "Silver", hex: "#E3E4E5" }],
     specs, description: `${name} — powerful Apple laptop.`,
     rating: 4.8, reviews: Math.floor(Math.random() * 400 + 100),
-    inStock: true, condition: "UK Used", ...opts,
+    inStock: true, condition: "UK Used", isDeal: true, ...opts,
   };
 }
 
 function ipad(id: string, name: string, price: number, specs: Record<string, string>, opts: Partial<Product> = {}): Product {
   return {
-    id, name, brand: "Apple", category: "Tablets", price,
+    id, name, brand: "Apple", category: "Tablets", price: price - DISCOUNT,
+    originalPrice: price,
     image: "/placeholder.svg", images: ["/placeholder.svg"],
     storage: [], colors: [{ name: "Space Gray", hex: "#4A4A4A" }, { name: "Silver", hex: "#E3E4E5" }],
     specs, description: `${name} — versatile Apple tablet.`,
     rating: 4.7, reviews: Math.floor(Math.random() * 300 + 50),
-    inStock: true, condition: "UK Used", ...opts,
+    inStock: true, condition: "UK Used", isDeal: true, ...opts,
   };
 }
 
@@ -63,8 +67,8 @@ export const products: Product[] = [
     name: "iPhone 15 Pro Max",
     brand: "Apple",
     category: "Smartphones",
-    price: 1800000,
-    originalPrice: 2100000,
+    price: 1770000,
+    originalPrice: 1800000,
     image: "/placeholder.svg",
     images: ["/placeholder.svg"],
     storage: ["256GB", "512GB", "1TB"],
@@ -83,7 +87,8 @@ export const products: Product[] = [
     name: "Samsung Galaxy S24 Ultra",
     brand: "Samsung",
     category: "Smartphones",
-    price: 1650000,
+    price: 1620000,
+    originalPrice: 1650000,
     image: "/placeholder.svg",
     images: ["/placeholder.svg"],
     storage: ["256GB", "512GB", "1TB"],
@@ -94,14 +99,15 @@ export const products: Product[] = [
     ],
     specs: { Display: "6.8\" Dynamic AMOLED 2X", Chip: "Snapdragon 8 Gen 3", Camera: "200MP Main", Battery: "5000 mAh" },
     description: "Galaxy AI is here. Search like never before, effortlessly edit photos, and Icons for quick access.",
-    rating: 4.8, reviews: 987, inStock: true, isNew: true,
+    rating: 4.8, reviews: 987, inStock: true, isNew: true, isDeal: true,
   },
   {
     id: "macbook-pro-m3-max",
     name: "MacBook Pro 14\" M3 Max 36GB 1TB",
     brand: "Apple",
     category: "Laptops",
-    price: 3300000,
+    price: 3270000,
+    originalPrice: 3300000,
     image: "/placeholder.svg",
     images: ["/placeholder.svg"],
     storage: ["1TB"],
@@ -115,49 +121,52 @@ export const products: Product[] = [
     name: "AirPods Pro 2",
     brand: "Apple",
     category: "Audio",
-    price: 375000,
+    price: 345000,
+    originalPrice: 375000,
     image: "/placeholder.svg",
     images: ["/placeholder.svg"],
     storage: [],
     colors: [{ name: "White", hex: "#F5F5F7" }],
     specs: { Chip: "H2", ANC: "2x more active", Battery: "6 hours", Case: "USB-C MagSafe" },
     description: "Rebuilt from the sound up. Featuring Adaptive Audio, Personalized Spatial Audio, and USB-C charging.",
-    rating: 4.7, reviews: 2341, inStock: true,
+    rating: 4.7, reviews: 2341, inStock: true, isDeal: true,
   },
   {
     id: "ps5-slim",
     name: "PlayStation 5 Slim",
     brand: "Sony",
     category: "Gaming",
-    price: 675000,
+    price: 645000,
+    originalPrice: 675000,
     image: "/placeholder.svg",
     images: ["/placeholder.svg"],
     storage: ["1TB"],
     colors: [{ name: "White", hex: "#FFFFFF" }],
     specs: { GPU: "10.28 TFLOPS", Storage: "1TB SSD", Resolution: "4K 120Hz", "Ray Tracing": "Yes" },
     description: "Experience lightning-fast loading, deeper immersion with haptic feedback, and a new generation of incredible games.",
-    rating: 4.8, reviews: 1567, inStock: true, isNew: true,
+    rating: 4.8, reviews: 1567, inStock: true, isNew: true, isDeal: true,
   },
   {
     id: "apple-watch-ultra-2",
     name: "Apple Watch Ultra 2",
     brand: "Apple",
     category: "Wearables",
-    price: 1200000,
+    price: 1170000,
+    originalPrice: 1200000,
     image: "/placeholder.svg",
     images: ["/placeholder.svg"],
     storage: [],
     colors: [{ name: "Natural Titanium", hex: "#8F8A81" }, { name: "Black Titanium", hex: "#2E2C2B" }],
     specs: { Display: "49mm Always-On", Chip: "S9 SiP", Battery: "36 hours", Water: "100m depth" },
     description: "The most rugged and capable Apple Watch pushes the limits with the S9 chip.",
-    rating: 4.8, reviews: 432, inStock: true,
+    rating: 4.8, reviews: 432, inStock: true, isDeal: true,
   },
   {
     id: "sony-wh1000xm5",
     name: "Sony WH-1000XM5",
     brand: "Sony",
     category: "Audio",
-    price: 525000,
+    price: 570000,
     originalPrice: 600000,
     image: "/placeholder.svg",
     images: ["/placeholder.svg"],
@@ -244,7 +253,7 @@ export const products: Product[] = [
   // ═══════════════════════════════════════
   // MacBook Air
   // ═══════════════════════════════════════
-  mac("mba-2017-13-i7-8-512", "MacBook Air 2017 13\" i7 8GB 512GB", 440000, { Display: "13\" ", Chip: "Intel Core i7", RAM: "8GB", Storage: "512GB" }),
+  mac("mba-2017-13-i7-8-512", "MacBook Air 2017 13\" i7 8GB 512GB", 440000, { Display: "13\"", Chip: "Intel Core i7", RAM: "8GB", Storage: "512GB" }),
   mac("mba-2019-13-i5-16-512", "MacBook Air 2019 13\" i5 16GB 512GB", 710000, { Display: "13\" Retina", Chip: "Intel Core i5", RAM: "16GB", Storage: "512GB" }),
   mac("mba-2020-13-m1-16-512", "MacBook Air 2020 13\" M1 16GB 512GB", 950000, { Display: "13\" Retina", Chip: "Apple M1", RAM: "16GB", Storage: "512GB" }),
   mac("mba-2022-13-m2-16-512", "MacBook Air 2022 13\" M2 16GB 512GB", 1300000, { Display: "13.6\" Liquid Retina", Chip: "Apple M2", RAM: "16GB", Storage: "512GB" }),
