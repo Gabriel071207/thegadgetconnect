@@ -7,13 +7,28 @@ import watchImg from "@/assets/products/apple-watch-ultra-2.png";
 import sonyImg from "@/assets/products/sony-wh1000xm5.png";
 import ipadImg from "@/assets/products/ipad-pro-m4.png";
 
-export const productImages: Record<string, string> = {
+// Map specific flagship IDs
+const exactMap: Record<string, string> = {
   "iphone-15-pro-max": iphoneImg,
   "samsung-s24-ultra": samsungImg,
-  "macbook-pro-m3": macbookImg,
+  "macbook-pro-m3-max": macbookImg,
   "airpods-pro-2": airpodsImg,
   "ps5-slim": ps5Img,
   "apple-watch-ultra-2": watchImg,
   "sony-wh1000xm5": sonyImg,
-  "ipad-pro-m4": ipadImg,
 };
+
+// Prefix-based mapping for all variants
+function getImageForId(id: string): string {
+  if (exactMap[id]) return exactMap[id];
+  if (id.startsWith("iphone")) return iphoneImg;
+  if (id.startsWith("mbp") || id.startsWith("mba") || id.startsWith("macbook")) return macbookImg;
+  if (id.startsWith("ipad")) return ipadImg;
+  return "/placeholder.svg";
+}
+
+// Build full map from products
+import { products } from "./products";
+export const productImages: Record<string, string> = Object.fromEntries(
+  products.map(p => [p.id, getImageForId(p.id)])
+);

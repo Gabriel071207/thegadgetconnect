@@ -45,6 +45,15 @@ export default function ProductCard({ product, index = 0 }: Props) {
                 PRE-ORDER
               </span>
             )}
+            {product.condition && (
+              <span className={`absolute top-2 right-2 text-xs font-medium px-2 py-1 rounded-md ${
+                product.condition === "Brand New"
+                  ? "bg-primary/20 text-primary"
+                  : "bg-secondary text-muted-foreground"
+              }`}>
+                {product.condition}
+              </span>
+            )}
           </div>
           <div>
             <p className="text-xs text-muted-foreground mb-1">{product.brand}</p>

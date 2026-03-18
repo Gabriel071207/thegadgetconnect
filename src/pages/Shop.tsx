@@ -11,10 +11,13 @@ export default function Shop() {
   const [brand, setBrand] = useState("All");
   const [search, setSearch] = useState("");
   const [sort, setSort] = useState("default");
+  const [condition, setCondition] = useState("All");
 
   let filtered = products.filter(p => {
     if (category !== "All" && p.category !== category) return false;
     if (brand !== "All" && p.brand !== brand) return false;
+    if (condition === "UK Used" && p.condition !== "UK Used") return false;
+    if (condition === "Brand New" && p.condition !== "Brand New" && !p.isNew) return false;
     if (search && !p.name.toLowerCase().includes(search.toLowerCase())) return false;
     return true;
   });
@@ -60,6 +63,21 @@ export default function Shop() {
               className={`px-3 py-1.5 rounded-md text-xs font-medium transition-all nexus-ease ${
                 category === c
                   ? "bg-primary/10 text-primary"
+                  : "bg-secondary text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              {c}
+            </button>
+          ))}
+        </div>
+        <div className="flex flex-wrap gap-2 mb-4">
+          {["All", "UK Used", "Brand New"].map(c => (
+            <button
+              key={c}
+              onClick={() => setCondition(c)}
+              className={`px-3 py-1.5 rounded-md text-xs font-medium transition-all nexus-ease ${
+                condition === c
+                  ? "bg-deal/10 text-deal"
                   : "bg-secondary text-muted-foreground hover:text-foreground"
               }`}
             >
