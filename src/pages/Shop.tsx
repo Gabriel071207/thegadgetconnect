@@ -11,10 +11,13 @@ export default function Shop() {
   const [brand, setBrand] = useState("All");
   const [search, setSearch] = useState("");
   const [sort, setSort] = useState("default");
+  const [condition, setCondition] = useState("All");
 
   let filtered = products.filter(p => {
     if (category !== "All" && p.category !== category) return false;
     if (brand !== "All" && p.brand !== brand) return false;
+    if (condition === "UK Used" && p.condition !== "UK Used") return false;
+    if (condition === "Brand New" && p.condition !== "Brand New" && !p.isNew) return false;
     if (search && !p.name.toLowerCase().includes(search.toLowerCase())) return false;
     return true;
   });
