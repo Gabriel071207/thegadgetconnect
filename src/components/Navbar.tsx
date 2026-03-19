@@ -4,6 +4,7 @@ import { useCart } from "@/context/CartContext";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "@/assets/logo.png";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const navLinks = [
   { label: "Home", path: "/" },
@@ -45,10 +46,11 @@ export default function Navbar() {
           ))}
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2">
           <Link to="/shop" className="p-2 rounded-md text-muted-foreground hover:text-foreground transition-colors">
             <Search className="w-5 h-5" />
           </Link>
+          <ThemeToggle />
           <Link to="/cart" className="relative p-2 rounded-md text-muted-foreground hover:text-foreground transition-colors">
             <ShoppingCart className="w-5 h-5" />
             {totalItems > 0 && (

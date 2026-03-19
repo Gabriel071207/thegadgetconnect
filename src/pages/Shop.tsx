@@ -103,7 +103,7 @@ export default function Shop() {
 
         <p className="text-sm text-muted-foreground mb-4">{filtered.length} products found</p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-6">
           {filtered.map((p, i) => (
             <ProductCard key={p.id} product={p} index={i} />
           ))}
