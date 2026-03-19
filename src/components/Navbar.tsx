@@ -4,6 +4,7 @@ import { useCart } from "@/context/CartContext";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "@/assets/logo.png";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const navLinks = [
   { label: "Home", path: "/" },
