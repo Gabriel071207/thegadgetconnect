@@ -108,7 +108,7 @@ function getImageForId(id: string): string {
   // XR single cam
   if (id.startsWith("iphone-xr")) return iphoneXrImg;
   // XS Max dual
-  if (id.startsWith("iphone-xs")) return iphoneDualImg;
+  if (id.startsWith("iphone-xs")) return iphoneXsMaxImg;
   // Fallbacks by generation
   if (id.startsWith("iphone-17-pro-max")) return iphone17ProMaxImg;
   if (id.startsWith("iphone-17-pro")) return iphone17ProImg;
