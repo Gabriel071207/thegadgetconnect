@@ -143,7 +143,7 @@ function getImageForId(id: string): string {
   if (id.startsWith("ipad-7")) return ipad8thImg;
   if (id.startsWith("ipad-6")) return ipad8thImg;
   if (id.startsWith("ipad-air")) return ipad10thImg;
-  if (id.startsWith("ipad")) return ipadImg;
+  if (id.startsWith("ipad")) return ipadProImg;
   return "/placeholder.svg";
 }
 
