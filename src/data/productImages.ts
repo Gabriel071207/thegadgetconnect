@@ -47,8 +47,8 @@ import ipadMini7Img from "@/assets/products/ipad-mini-7.webp";
 
 const exactMap: Record<string, string> = {
   // iPhone 11
-  "iphone-11-64": iphone12Img,
-  "iphone-11-128": iphone12Img,
+  "iphone-11-64": iphone11Img,
+  "iphone-11-128": iphone11Img,
   "iphone-11-pro-64": iphone11ProImg,
   "iphone-11-pro-256": iphone11ProImg,
   "iphone-11-pro-max-64": iphone11ProMaxImg,
