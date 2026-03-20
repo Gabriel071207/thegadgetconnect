@@ -106,7 +106,7 @@ const exactMap: Record<string, string> = {
 function getImageForId(id: string): string {
   if (exactMap[id]) return exactMap[id];
   // XR single cam
-  if (id.startsWith("iphone-xr")) return iphoneSingleImg;
+  if (id.startsWith("iphone-xr")) return iphoneXrImg;
   // XS Max dual
   if (id.startsWith("iphone-xs")) return iphoneDualImg;
   // Fallbacks by generation
