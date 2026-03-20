@@ -1,13 +1,11 @@
-import samsungImg from "@/assets/products/samsung-s24-ultra.png";
+import samsungImg from "@/assets/products/samsung-s24-ultra.webp";
 import macbookImg from "@/assets/products/macbook-pro-m3.png";
 import macbookAirImg from "@/assets/products/macbook-air.png";
-import airpodsImg from "@/assets/products/airpods-pro-2.png";
+import airpodsImg from "@/assets/products/airpods-pro-2.webp";
 import ps5Img from "@/assets/products/ps5-slim.png";
-import watchImg from "@/assets/products/apple-watch-ultra-2.png";
+import watchImg from "@/assets/products/apple-watch-ultra-2.webp";
 import sonyImg from "@/assets/products/sony-wh1000xm5.png";
 import ipadImg from "@/assets/products/ipad-pro-m4.png";
-import ipadStdImg from "@/assets/products/ipad-standard.png";
-import ipadMiniImg from "@/assets/products/ipad-mini.png";
 import iphoneSingleImg from "@/assets/products/iphone-single-cam.png";
 
 // Model-specific iPhone images
@@ -33,9 +31,18 @@ import iphone17ProImg from "@/assets/products/iphone-17-pro.webp";
 import iphone17ProMaxImg from "@/assets/products/iphone-17-pro-max.webp";
 import iphoneDualImg from "@/assets/products/iphone-dual-cam.png";
 
+// iPad images
+import ipad8thImg from "@/assets/products/ipad-8th-gen.webp";
+import ipad9thImg from "@/assets/products/ipad-9th-gen.webp";
+import ipad10thImg from "@/assets/products/ipad-10th-gen.webp";
+import ipad11thImg from "@/assets/products/ipad-11th-gen.webp";
+import ipadMini4Img from "@/assets/products/ipad-mini-4.webp";
+import ipadMini5Img from "@/assets/products/ipad-mini-5.webp";
+import ipadMini7Img from "@/assets/products/ipad-mini-7.webp";
+
 const exactMap: Record<string, string> = {
   // iPhone 11
-  "iphone-11-64": iphone12Img, // dual cam fallback
+  "iphone-11-64": iphone12Img,
   "iphone-11-128": iphone12Img,
   "iphone-11-pro-64": iphone11ProImg,
   "iphone-11-pro-256": iphone11ProImg,
@@ -76,6 +83,20 @@ const exactMap: Record<string, string> = {
   "ps5-slim": ps5Img,
   "apple-watch-ultra-2": watchImg,
   "sony-wh1000xm5": sonyImg,
+  // iPads
+  "ipad-mini-4-128": ipadMini4Img,
+  "ipad-mini-5-64": ipadMini5Img,
+  "ipad-mini-5-256": ipadMini5Img,
+  "ipad-mini-7-128-new": ipadMini7Img,
+  "ipad-mini-7-256-new": ipadMini7Img,
+  "ipad-8-32": ipad8thImg,
+  "ipad-8-128": ipad8thImg,
+  "ipad-9-64": ipad9thImg,
+  "ipad-9-256": ipad9thImg,
+  "ipad-10-64-used": ipad10thImg,
+  "ipad-10-64-new": ipad10thImg,
+  "ipad-11-128-new": ipad11thImg,
+  "ipad-11-256-new": ipad11thImg,
 };
 
 function getImageForId(id: string): string {
@@ -104,9 +125,19 @@ function getImageForId(id: string): string {
   if (id.startsWith("mba")) return macbookAirImg;
   if (id.startsWith("mbp") || id.startsWith("macbook")) return macbookImg;
   // iPads
-  if (id.includes("mini")) return ipadMiniImg;
-  if (id.startsWith("ipad-air") || id.startsWith("ipad-10") || id.startsWith("ipad-11")) return ipadImg;
-  if (id.startsWith("ipad")) return ipadStdImg;
+  if (id.startsWith("ipad-mini-7")) return ipadMini7Img;
+  if (id.startsWith("ipad-mini-6")) return ipadMini7Img;
+  if (id.startsWith("ipad-mini-5")) return ipadMini5Img;
+  if (id.startsWith("ipad-mini-4")) return ipadMini4Img;
+  if (id.startsWith("ipad-mini")) return ipadMini5Img;
+  if (id.startsWith("ipad-11")) return ipad11thImg;
+  if (id.startsWith("ipad-10")) return ipad10thImg;
+  if (id.startsWith("ipad-9")) return ipad9thImg;
+  if (id.startsWith("ipad-8")) return ipad8thImg;
+  if (id.startsWith("ipad-7")) return ipad8thImg;
+  if (id.startsWith("ipad-6")) return ipad8thImg;
+  if (id.startsWith("ipad-air")) return ipad10thImg;
+  if (id.startsWith("ipad")) return ipadImg;
   return "/placeholder.svg";
 }
 
