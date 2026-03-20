@@ -124,7 +124,9 @@ function getImageForId(id: string): string {
   if (id.startsWith("iphone-13")) return iphone13Img;
   if (id.startsWith("iphone-12-pro")) return iphone12ProImg;
   if (id.startsWith("iphone-12")) return iphone12Img;
-  if (id.startsWith("iphone")) return iphoneDualImg;
+  if (id.startsWith("iphone-11")) return iphone11Img;
+  if (id.startsWith("iphone-air")) return iphoneAirImg;
+  if (id.startsWith("iphone")) return iphoneXImg;
   // Macs
   if (id.startsWith("mba")) return macbookAirImg;
   if (id.startsWith("mbp") || id.startsWith("macbook")) return macbookImg;
