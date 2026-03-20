@@ -1,12 +1,16 @@
 import samsungImg from "@/assets/products/samsung-s24-ultra.webp";
-import macbookImg from "@/assets/products/macbook-pro-m3.png";
-import macbookAirImg from "@/assets/products/macbook-air.png";
+import macbookImg from "@/assets/products/macbook-pro-m3.jpeg";
+import macbookAirImg from "@/assets/products/macbook-air.webp";
 import airpodsImg from "@/assets/products/airpods-pro-2.webp";
 import ps5Img from "@/assets/products/ps5-slim.png";
 import watchImg from "@/assets/products/apple-watch-ultra-2.webp";
 import sonyImg from "@/assets/products/sony-wh1000xm5.png";
-import ipadImg from "@/assets/products/ipad-pro-m4.png";
-import iphoneSingleImg from "@/assets/products/iphone-single-cam.png";
+import ipadProImg from "@/assets/products/ipad-pro-m4.webp";
+import iphoneXrImg from "@/assets/products/iphone-xr.webp";
+import iphoneXImg from "@/assets/products/iphone-x.webp";
+import iphoneXsMaxImg from "@/assets/products/iphone-xs-max.webp";
+import iphone11Img from "@/assets/products/iphone-11.webp";
+import iphoneAirImg from "@/assets/products/iphone-air.webp";
 
 // Model-specific iPhone images
 import iphone11ProMaxImg from "@/assets/products/iphone-11-pro-max.jpeg";
@@ -29,7 +33,7 @@ import iphone16ProMaxImg from "@/assets/products/iphone-16-pro-max.webp";
 import iphone17Img from "@/assets/products/iphone-17.webp";
 import iphone17ProImg from "@/assets/products/iphone-17-pro.webp";
 import iphone17ProMaxImg from "@/assets/products/iphone-17-pro-max.webp";
-import iphoneDualImg from "@/assets/products/iphone-dual-cam.png";
+
 
 // iPad images
 import ipad8thImg from "@/assets/products/ipad-8th-gen.webp";
@@ -38,12 +42,13 @@ import ipad10thImg from "@/assets/products/ipad-10th-gen.webp";
 import ipad11thImg from "@/assets/products/ipad-11th-gen.webp";
 import ipadMini4Img from "@/assets/products/ipad-mini-4.webp";
 import ipadMini5Img from "@/assets/products/ipad-mini-5.webp";
+import ipadMini6Img from "@/assets/products/ipad-mini-6.webp";
 import ipadMini7Img from "@/assets/products/ipad-mini-7.webp";
 
 const exactMap: Record<string, string> = {
   // iPhone 11
-  "iphone-11-64": iphone12Img,
-  "iphone-11-128": iphone12Img,
+  "iphone-11-64": iphone11Img,
+  "iphone-11-128": iphone11Img,
   "iphone-11-pro-64": iphone11ProImg,
   "iphone-11-pro-256": iphone11ProImg,
   "iphone-11-pro-max-64": iphone11ProMaxImg,
@@ -102,9 +107,9 @@ const exactMap: Record<string, string> = {
 function getImageForId(id: string): string {
   if (exactMap[id]) return exactMap[id];
   // XR single cam
-  if (id.startsWith("iphone-xr")) return iphoneSingleImg;
+  if (id.startsWith("iphone-xr")) return iphoneXrImg;
   // XS Max dual
-  if (id.startsWith("iphone-xs")) return iphoneDualImg;
+  if (id.startsWith("iphone-xs")) return iphoneXsMaxImg;
   // Fallbacks by generation
   if (id.startsWith("iphone-17-pro-max")) return iphone17ProMaxImg;
   if (id.startsWith("iphone-17-pro")) return iphone17ProImg;
@@ -120,13 +125,15 @@ function getImageForId(id: string): string {
   if (id.startsWith("iphone-13")) return iphone13Img;
   if (id.startsWith("iphone-12-pro")) return iphone12ProImg;
   if (id.startsWith("iphone-12")) return iphone12Img;
-  if (id.startsWith("iphone")) return iphoneDualImg;
+  if (id.startsWith("iphone-11")) return iphone11Img;
+  if (id.startsWith("iphone-air")) return iphoneAirImg;
+  if (id.startsWith("iphone")) return iphoneXImg;
   // Macs
   if (id.startsWith("mba")) return macbookAirImg;
   if (id.startsWith("mbp") || id.startsWith("macbook")) return macbookImg;
   // iPads
   if (id.startsWith("ipad-mini-7")) return ipadMini7Img;
-  if (id.startsWith("ipad-mini-6")) return ipadMini7Img;
+  if (id.startsWith("ipad-mini-6")) return ipadMini6Img;
   if (id.startsWith("ipad-mini-5")) return ipadMini5Img;
   if (id.startsWith("ipad-mini-4")) return ipadMini4Img;
   if (id.startsWith("ipad-mini")) return ipadMini5Img;
@@ -137,7 +144,7 @@ function getImageForId(id: string): string {
   if (id.startsWith("ipad-7")) return ipad8thImg;
   if (id.startsWith("ipad-6")) return ipad8thImg;
   if (id.startsWith("ipad-air")) return ipad10thImg;
-  if (id.startsWith("ipad")) return ipadImg;
+  if (id.startsWith("ipad")) return ipadProImg;
   return "/placeholder.svg";
 }
 
