@@ -33,7 +33,7 @@ import iphone16ProMaxImg from "@/assets/products/iphone-16-pro-max.webp";
 import iphone17Img from "@/assets/products/iphone-17.webp";
 import iphone17ProImg from "@/assets/products/iphone-17-pro.webp";
 import iphone17ProMaxImg from "@/assets/products/iphone-17-pro-max.webp";
-import iphoneDualImg from "@/assets/products/iphone-dual-cam.png";
+
 
 // iPad images
 import ipad8thImg from "@/assets/products/ipad-8th-gen.webp";
