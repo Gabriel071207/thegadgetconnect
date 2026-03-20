@@ -132,7 +132,7 @@ function getImageForId(id: string): string {
   if (id.startsWith("mbp") || id.startsWith("macbook")) return macbookImg;
   // iPads
   if (id.startsWith("ipad-mini-7")) return ipadMini7Img;
-  if (id.startsWith("ipad-mini-6")) return ipadMini7Img;
+  if (id.startsWith("ipad-mini-6")) return ipadMini6Img;
   if (id.startsWith("ipad-mini-5")) return ipadMini5Img;
   if (id.startsWith("ipad-mini-4")) return ipadMini4Img;
   if (id.startsWith("ipad-mini")) return ipadMini5Img;
