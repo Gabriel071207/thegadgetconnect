@@ -42,6 +42,7 @@ import ipad10thImg from "@/assets/products/ipad-10th-gen.webp";
 import ipad11thImg from "@/assets/products/ipad-11th-gen.webp";
 import ipadMini4Img from "@/assets/products/ipad-mini-4.webp";
 import ipadMini5Img from "@/assets/products/ipad-mini-5.webp";
+import ipadMini6Img from "@/assets/products/ipad-mini-6.webp";
 import ipadMini7Img from "@/assets/products/ipad-mini-7.webp";
 
 const exactMap: Record<string, string> = {
