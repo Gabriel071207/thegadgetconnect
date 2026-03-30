@@ -78,20 +78,22 @@ export default function Checkout() {
   }));
 
   const saveOrder = async (paymentRef?: string, status: string = "pending") => {
-    const { data, error } = await supabase.from("orders").insert({
-      customer_name: form.fullName,
-      customer_email: form.email,
-      customer_phone: form.phone,
-      shipping_address: `${form.address}, ${form.city}`,
-      items: orderItems as any,
-      total_amount: subtotal,
-      payment_method: paymentMethod,
-      payment_reference: paymentRef || null,
-      payment_status: status,
-    }).select("id").single();
+    const { data, error } = await supabase.functions.invoke("create-order", {
+      body: {
+        customer_name: form.fullName.trim(),
+        customer_email: form.email.trim(),
+        customer_phone: form.phone.trim(),
+        shipping_address: `${form.address.trim()}, ${form.city.trim()}`,
+        items: orderItems,
+        total_amount: subtotal,
+        payment_method: paymentMethod,
+        payment_reference: paymentRef || null,
+      },
+    });
 
     if (error) throw error;
-    return data.id;
+    if (data?.error) throw new Error(data.error);
+    return data.orderId;
   };
 
   const sendEmailNotification = async (oid: string) => {
