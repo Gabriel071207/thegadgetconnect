@@ -15,6 +15,7 @@ import Checkout from "./pages/Checkout";
 import Deals from "./pages/Deals";
 import GadgetFinder from "./pages/GadgetFinder";
 import TradeIn from "./pages/TradeIn";
+import Preorder from "./pages/Preorder";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
@@ -38,6 +39,7 @@ const App = () => (
               <Route path="/deals" element={<Deals />} />
               <Route path="/finder" element={<GadgetFinder />} />
               <Route path="/trade-in" element={<TradeIn />} />
+              <Route path="/preorder" element={<Preorder />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="*" element={<NotFound />} />
             </Routes>

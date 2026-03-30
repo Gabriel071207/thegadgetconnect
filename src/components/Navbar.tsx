@@ -12,6 +12,7 @@ const navLinks = [
   { label: "Deals", path: "/deals" },
   { label: "Gadget Finder", path: "/finder" },
   { label: "Trade-In", path: "/trade-in" },
+  { label: "Pre-Order", path: "/preorder" },
   { label: "Contact", path: "/contact" },
 ];
 
