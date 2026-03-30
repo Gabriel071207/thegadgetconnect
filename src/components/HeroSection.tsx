@@ -35,10 +35,10 @@ export default function HeroSection() {
                 Browse Gadgets <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
-                to="/deals"
+                to="/preorder"
                 className="inline-flex items-center gap-2 bg-secondary text-secondary-foreground px-6 py-3 rounded-lg text-sm font-medium hover:bg-secondary/80 transition-colors nexus-ease"
               >
-                View Deals
+                Pre-Order & Save
               </Link>
             </div>
           </motion.div>
