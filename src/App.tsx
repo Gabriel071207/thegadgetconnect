@@ -15,6 +15,7 @@ import Checkout from "./pages/Checkout";
 import Deals from "./pages/Deals";
 import GadgetFinder from "./pages/GadgetFinder";
 import TradeIn from "./pages/TradeIn";
+import Preorder from "./pages/Preorder";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 

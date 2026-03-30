@@ -2,7 +2,7 @@ import HeroSection from "@/components/HeroSection";
 import ProductCard from "@/components/ProductCard";
 import { products, getDeals, getNewArrivals } from "@/data/products";
 import { Link } from "react-router-dom";
-import { ArrowRight, Smartphone, Laptop, Headphones, Gamepad2, Watch, Tablet } from "lucide-react";
+import { ArrowRight, Smartphone, Laptop, Headphones, Gamepad2, Watch, Tablet, Package, Clock } from "lucide-react";
 
 const categoryIcons = [
   { name: "Smartphones", icon: Smartphone },

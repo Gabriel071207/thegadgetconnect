@@ -24,7 +24,7 @@ export default function ProductCard({ product, index = 0 }: Props) {
     >
       <Link to={`/product/${product.id}`} className="block group">
         <div className="bg-card rounded-xl p-2.5 md:p-4 card-shadow transition-all duration-200 nexus-ease group-hover:-translate-y-1 group-hover:card-hover-shadow">
-          <div className="relative aspect-square mb-2 md:mb-3 overflow-hidden rounded-lg bg-secondary/30 flex items-center justify-center">
+          <div className="relative aspect-square mb-2 md:mb-3 overflow-hidden rounded-lg bg-black flex items-center justify-center">
             <img
               src={img}
               alt={product.name}
