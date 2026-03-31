@@ -93,9 +93,11 @@ export default function Contact() {
             />
             <button
               type="submit"
-              className="w-full bg-primary text-primary-foreground py-3 rounded-lg text-sm font-medium hover:bg-primary/90 transition-colors"
+              disabled={loading}
+              className="w-full bg-primary text-primary-foreground py-3 rounded-lg text-sm font-medium hover:bg-primary/90 transition-colors disabled:opacity-50 inline-flex items-center justify-center gap-2"
             >
-              Send Message
+              {loading && <Loader2 className="w-4 h-4 animate-spin" />}
+              {loading ? "Sending..." : "Send Message"}
             </button>
           </form>
         </div>
