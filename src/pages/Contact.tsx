@@ -1,16 +1,29 @@
-import { MessageCircle, Mail, MapPin } from "lucide-react";
+import { MessageCircle, Mail, MapPin, Loader2 } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
 
 export default function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success("Message sent! We'll get back to you soon.");
-    setName(""); setEmail(""); setMessage("");
+    setLoading(true);
+    try {
+      const { error } = await supabase.functions.invoke("send-contact-email", {
+        body: { name, email, message },
+      });
+      if (error) throw error;
+      toast.success("Message sent! We'll get back to you soon.");
+      setName(""); setEmail(""); setMessage("");
+    } catch (err) {
+      console.error(err);
+      toast.error("Failed to send message. Please try again.");
+    }
+    setLoading(false);
   };
 
   return (
