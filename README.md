@@ -121,7 +121,7 @@ GitHub: [Gabriel071207](https://github.com/Gabriel071207)
     </td>
     <td align="center">
       <strong>Checkout & payment</strong><br><br>
-      <img src="payment.png" width="250">
+      <img src="checkout.png" width="250">
     </td>
   </tr>
 </table>
