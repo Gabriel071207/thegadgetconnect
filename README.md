@@ -1,4 +1,7 @@
 # Gadget Connect
+## Live Demo
+
+[Visit Gadget Connect](https://thegadgetconnect.lovable.app)
 
 A full-stack gadget marketplace designed to help users discover, purchase, sell, trade, and pre-order consumer electronics.
 
